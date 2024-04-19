@@ -1,0 +1,228 @@
+.attribution { font-size: 11px; text-align: center; margin: 2% 0;}
+.attribution a { color: hsl(228, 45%, 44%); }
+
+body{
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+    font-family: 'League Spartan', sans-serif;
+}
+header{
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+a{
+    text-decoration: none;
+}
+p{
+    color: hsl(0, 0%, 63%);
+}
+nav{
+    margin-left: 2rem;
+}
+nav a{
+    padding-left: 20px;
+    position: relative;
+    text-decoration: none;
+    color: hsl(0, 0%, 100%);
+}
+nav a::after{
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 65%;
+    width: 5px;
+    height: 2px;
+    background-color: hsl(0, 0%, 100%);
+    transition: width 0.3s ease;
+    transform: translateX(-50%);
+    opacity: 0;
+}
+nav a:hover::after{
+    width: calc(100% - 40px);
+    opacity: 1;
+}
+h1,h2{
+    color: hsl(0, 0%, 0%);
+}
+h1{
+    font-weight: 700;
+    font-size: 2.2em;
+}
+h2{
+    font-weight: 600;
+    letter-spacing: 3px;
+    font-size: 1.2em;
+}
+h2,.cta{
+    text-transform: uppercase;
+}
+p{
+    line-height: 1.5;
+}
+main p{
+    width: 82%;
+}
+.cta{
+    font-size: 0.9em;
+    letter-spacing: 10px;
+    color: hsl(0, 0%, 0%);
+}
+.cta-div:hover{
+    cursor: pointer;   
+}
+.cta-div:hover a,
+.cta-div:hover svg path {
+    color: hsl(0, 0%, 63%);
+    fill: hsl(0, 0%, 63%);
+}
+.mobile-menu,.icon-hamburger{
+    display: none;
+}
+main{
+    padding: 75px;
+}
+.slider{
+    width: 120px;
+    height: 60px;
+    display: flex;   
+    align-items: center;
+    background-color: hsl(0, 0%, 0%);
+}
+.left-slider,.right-slider{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.left-slider:hover,.right-slider:hover{
+    cursor: pointer;
+    background-color: hsl(0, 0%, 27%);
+}
+.container{
+    margin: 0;
+    padding: 0;
+}
+.container-1 {
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;    
+}
+.container-2 {
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;    
+}
+.section-1 {
+    background-image: url('images/desktop-image-hero-1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s;
+}
+.section-5,.section-7{
+    background-repeat: no-repeat;
+    background-size: cover;  
+}
+.section-3,
+.section-4{
+    display: none;
+}
+.section-5,.section-7{
+    grid-column: span 1; 
+}
+.section-5 {
+    background-image: url('images/image-about-dark.jpg');
+}  
+.section-6{
+    padding: 20px;
+    grid-column-end: span 1.5;
+} 
+.section-7{
+    background-image: url('images/image-about-light.jpg');
+}
+@media screen and (max-width: 950px) {
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7); 
+        z-index: 10; 
+        display: none;
+    }      
+    .icon-hamburger,#icon-close{
+        cursor: pointer;
+    }
+    #icon-close {
+        position: absolute;
+        cursor: pointer;
+      }
+    .mobile-menu.show {
+        display: flex;
+        transform: translateX(0);
+    }
+    .mobile-menu{
+        width: 100%;
+        z-index: 20;
+        height: 15vh;
+        padding: 30px;
+        position: fixed;
+        align-items: center;
+        transform: translateX(100%);
+        background-color: hsl(0, 0%, 100%);
+        transition: transform 0.3s ease-out;
+    }
+    .mobile-menu div{
+        margin-left: 20%;
+    }
+    .mobile-menu a{
+        font-weight: 600;
+        font-size: 1.1em;
+        padding-right: 20px;
+        color: hsl(0, 0%, 0%);
+    }
+    header{
+        justify-content: space-between;
+    }
+    nav{
+        display: none;
+    }
+    .container,.container-1,.container-2{
+        display: flex;
+        position: relative;
+        flex-direction: column;
+    }
+    main{
+        padding: 50px;
+    }
+    main p{
+        width: 85%;
+    }
+    .icon-hamburger{
+        display: block;
+    }
+    .section-1 {
+        height: 60vh;
+    }
+    .section-5,.section-7{
+        width: 100%;
+        height: 40vh;
+    }
+    .section-6{
+        padding: 50px;
+    }
+    .slider{
+        top: 39%;
+        left: 76%;
+        position: absolute;
+    }
+}
